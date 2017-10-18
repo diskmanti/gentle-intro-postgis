@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Gentle intro to PostGIS</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <link href="amanti.css" rel="stylesheet" type='text/css'>
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='dark'>
+
+
+<div><em>Gentle intro to PostGIS</em>
+  <br />
+  <div><small class="nobreak"> <a href="https:twitter.com/amantilulo">@amantilulo</a> / Amanti Lulo / map &#128341 </small></div>
+</div>
+<div class="nobreak">Nqs keni <div class="blink nobreak">pyetje &#x1f64b;</div>  <br /> ju lutem pyesni &#x1f601;</div>
+<div>Hartat jane vepra arti...</div>
+<div data-background-image="http://1.bp.blogspot.com/-zgKh_iUR1lI/UNJRIdDbZaI/AAAAAAAAIlY/GfBxUOZ3Rd0/s1600/Matthew-Cusick_trendland_2-600x436.jpg"></div>
+<div>Te nevojshme...</div>
+<div data-background-image="https://washington-org.s3.amazonaws.com/s3fs-public/styles/editorial_wide/public/wmata-metro-map.jpg"></div>
+<div>Interesante</div>
+<div data-background-image="https://www.washingtonpost.com/graphics/national/eclipse/img/_grid-980.png?c=342"></div>
+<div>Ku t'i mbajme te dhenat? &#x1F914;</div>
+<div class="nobreak">Spatial DB</div>
+<div>Nje db e zakonshme <br /> <br />
+  <table style="width:100%">
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+  </table>
+</div>
+<div>Me fuqine e <em>Koordinatave</em> <br /> <br />
+  <table style="width:100%">
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+      <th>Location</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td><em>41, 19</em></td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td><em>40, 21</em></td>
+    </tr>
+  </table>
+</div>
+<div> <big><a href="http://postgis.net" target="_blank">Postgis</a></big>  <br />
+<div>Extension i Postgresql</div>
+</div>
+<div>It adds support for <em>geographic objects</em> <br /> allowing location queries to be run in SQL</div>
+<div>point <br> poyline <br> polygon</div>
+<div><a href="http://www.opengeospatial.org/standards" target="_blank"><big><em>OGC</em></big></a> <br>
+<div class="nobreak"><a href="https://en.wikipedia.org/wiki/Simple_Features" target="_blank"><small>Simple Features</small></a></div>
+<div><a href="https://en.wikipedia.org/wiki/Well-known_text" target="_blank"><small>WKT/WKB</small></a></div>
+</div>
+<div>Si te instalojme PostGIS?</div>
+<div><big>Windows</big> <br>
+<a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads" target="_blank">EnterpriseDB</a> <br>
+<a href="https://www.openscg.com/bigsql/postgresql/installers.jsp/" target="_blank">BigSQL</a>
+</div>
+<div><big>*nix</big> <br>
+<a href="https://www.postgresql.org/download/" target="_blank">postgresql.org</a>
+</div>
+<div>Le te krijojme nje spatial db</div>
+<div>
+<code>
+psql -U <i>user</i> -W  <br>
+<div class="nobreak">CREATE DATABASE <i>database name</i></div>
+CREATE EXTENSION postgis;
+</code>
+</div>
+<div>Input data?</div>
+<div> ¯\_(ツ)_/¯ <br> <br>
+<a href="http://www.bostongis.com/pgsql2shp_shp2pgsql_quickguide_20.bqg" target="_blank"><small>shp2pgsql</small></a> <br>
+<a href="http://www.volkerschatz.com/net/osm/osm2pgsql-usage.html" target="_blank"><small>osm2pgsql</small></a> <br>
+<a href="https://www.postgresql.org/docs/9.6/static/sql-copy.html" target="_blank"><small>copy command</small></a> <br>
+<a href="http://www.gdal.org/ogr2ogr.html" target="_blank"><small><em>ogr2ogr</em></small></a>
+</div>
+<div><a href="http://www.naturalearthdata.com/">Natural Earth</a>
+  <small>... the duck tape of mapping</small>
+</div>
+
+   
+
+
+
+
+
+</body>
+</html>
