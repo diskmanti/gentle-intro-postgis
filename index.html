@@ -9,6 +9,7 @@
   <link href="amanti.css" rel="stylesheet" type='text/css'>
   <style>
     .new-shiny { background: #aaaaaa; }
+    .yellow { background-color: yellow; }
   </style>
   <script src='big.js'></script>
   <script src='highlight.js'></script>
@@ -103,10 +104,30 @@ CREATE EXTENSION postgis;
 <a href="https://www.postgresql.org/docs/9.6/static/sql-copy.html" target="_blank"><small>copy command</small></a> <br>
 <a href="http://www.gdal.org/ogr2ogr.html" target="_blank"><small><em>ogr2ogr</em></small></a>
 </div>
-<div><a href="http://www.naturalearthdata.com/">Natural Earth</a>
+<div><a href="http://www.naturalearthdata.com/" target="_blank">Natural Earth</a>
   <small>... the duck tape of mapping</small>
 </div>
-
+<div align="center">Query Time</div>
+<div>
+  <code>
+  SELECT * <br>
+  <div class="nobreak">FROM populated_places</div>
+  LIMIT 10
+  </code>
+</div>
+<div >
+  <div class="nobreak">select <small> | *some column*</small></div>  <br>
+  <div>from <small> | *some table*</small></div>  <br>
+  <div>where <small> | *any condition*</small></div>
+  <br>
+</div>
+<div>
+  <code>   
+      <div class="nobreak">SELECT name, pop_max, pop_min</div> 
+      <div class="nobreak">FROM pop_places</div> 
+      <div class="nobreak">WHERE sov0name = 'Uruguay'</div>   
+  </code>
+</div>
    
 
 

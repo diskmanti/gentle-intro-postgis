@@ -166,6 +166,15 @@ table, th, td {
 
 }
 
-body.background-cover {
-    background-size: cover;
+pre {
+    margin:0;
+    padding:0.2em;
+    background:#fff;
+    color:#000;
+    font-weight:normal;
+}
+
+pre em {
+    color:#000;
+    background:yellow;
 }
