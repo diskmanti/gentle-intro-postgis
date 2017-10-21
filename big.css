@@ -169,12 +169,12 @@ table, th, td {
 pre {
     margin:0;
     padding:0.2em;
-    background:#fff;
-    color:#000;
+    background:#272c32;
+    color:#ffff;
     font-weight:normal;
 }
 
 pre em {
     color:#000;
-    background:yellow;
+    background:black;
 }

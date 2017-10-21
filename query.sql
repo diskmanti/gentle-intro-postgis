@@ -13,6 +13,16 @@ SELECT ST_Area(geom) From admin Where name='Angola'
 SELECT SUM(ST_Length(geom)) FROM roads
 
 ---
+--- dist => 1 unit = 10km
+SELECT name 
+FROM pop_places as p
+Where ST_DWithin(
+p.geom,
+ST_GeomFromText('POINT(19.8291569 41.3213463)', 4326), 0.3) 
 
-SELECT name
-FROM 
+
+Select p.name 
+from pop_places as p
+join admin as a
+on ST_Within(p.geom, a.geom)
+Where a.sovereignt = 'Albania'

@@ -9,7 +9,7 @@
   <link href="amanti.css" rel="stylesheet" type='text/css'>
   <style>
     .new-shiny { background: #aaaaaa; }
-    .yellow { background-color: yellow; }
+    .yellow { color: yellow; }
   </style>
   <script src='big.js'></script>
   <script src='highlight.js'></script>
@@ -17,16 +17,18 @@
 </head>
 <body class='dark'>
 
-
+<div>Mireseerdhet Maptime-rs &#128518; <br> @ <br> map &#128341;</div>
+<div>Amanti Lulo</div>
+<div>https://harta.xyz/gentle-intro-postgis</div>
 <div><em>Gentle intro to PostGIS</em>
   <br />
   <div><small class="nobreak"> <a href="https:twitter.com/amantilulo">@amantilulo</a> / Amanti Lulo / map &#128341 </small></div>
 </div>
 <div class="nobreak">Nqs keni <div class="blink nobreak">pyetje &#x1f64b;</div>  <br /> ju lutem pyesni &#x1f601;</div>
 <div>Hartat jane vepra arti...</div>
-<div data-background-image="http://1.bp.blogspot.com/-zgKh_iUR1lI/UNJRIdDbZaI/AAAAAAAAIlY/GfBxUOZ3Rd0/s1600/Matthew-Cusick_trendland_2-600x436.jpg"></div>
+<div><img src="http://1.bp.blogspot.com/-zgKh_iUR1lI/UNJRIdDbZaI/AAAAAAAAIlY/GfBxUOZ3Rd0/s1600/Matthew-Cusick_trendland_2-600x436.jpg" alt=""></div>
 <div>Te nevojshme...</div>
-<div data-background-image="https://washington-org.s3.amazonaws.com/s3fs-public/styles/editorial_wide/public/wmata-metro-map.jpg"></div>
+<div><img src="https://washington-org.s3.amazonaws.com/s3fs-public/styles/editorial_wide/public/wmata-metro-map.jpg" alt=""></div>
 <div>Interesante</div>
 <div data-background-image="https://www.washingtonpost.com/graphics/national/eclipse/img/_grid-980.png?c=342"></div>
 <div>Ku t'i mbajme te dhenat? &#x1F914;</div>
@@ -122,17 +124,71 @@ CREATE EXTENSION postgis;
   <br>
 </div>
 <div>
-  <code>   
-      <div class="nobreak">SELECT name, pop_max, pop_min</div> 
-      <div class="nobreak">FROM pop_places</div> 
-      <div class="nobreak">WHERE sov0name = 'Uruguay'</div>   
+  <code>
+  <div class="nobreak">SELECT name, pop_max, pop_min</div>
+  <div class="nobreak">FROM pop_places</div>
+  <div class="nobreak">WHERE sov0name = 'Uruguay'</div>
   </code>
 </div>
-   
-
-
-
-
+<div><em>Spatial</em> Query Time</div>
+<div>
+  <code>
+  <div class="nobreak">SELECT name, <em>geom</em></div> <br>
+  <div class="nobreak">FROM pop_places LIMIT 10</div>
+  </code>
+</div>
+<div>
+  <code>
+  <div class="nobreak">SELECT name, geom, <em>ST_AsText(geom)</em></div> <br>
+  <div class="nobreak">FROM pop_places LIMIT 10</div>
+  </code>
+</div>
+<div>
+  <code>
+  <big>PostGIS Functions</big> <br> <br>
+  <div class="nobreak">SELECT name, ST_GeometryType(geom), ST_NDims(geom), ST_SRID(geom)</div> <br>
+  <div>FROM pop_places</div>
+  </code>
+</div>
+<div>
+  <code>
+    <div class="nobreak">SELECT name, ST_X(geom), ST_Y(geom), ST_SRID(geom), ST_AsText(geom)</div> <br>
+    <div>FROM pop_places WHERE name = 'Trinidad'</div>
+  </code>
+</div>
+<div>
+  <code>
+    <div class="nobreak">SELECT ST_Area(geom)</div>
+    <div>From admin</div> 
+    <div class="nobreak">Where name='Angola'</div>
+  </code>
+</div>
+<div>
+  <code>
+   <pre>
+    SELECT name 
+    FROM pop_places as p
+    Where <em>ST_DWithin</em>(
+      p.geom, <em>ST_GeomFromText</em>(
+        'POINT(19.8291569 41.3213463)', 4326), 0.3
+    ) 
+   </pre>
+  </code>
+</div>
+<div>
+  <code>
+    <pre>
+      Select p.name 
+      FROM pop_places as p
+      JOIN admin AS a
+      on <em>ST_Within</em>(p.geom, a.geom)
+      Where a.sovereignt = 'Albania'
+    </pre>
+  </code>
+</div>
+<div>
+  Faleminderit
+</div>
 
 </body>
 </html>
